@@ -1,0 +1,114 @@
+@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400&family=Inter:wght@200;300;400;500;600&family=Noto+Serif+JP:wght@200;300;400;500;600;700;900&family=Zen+Kaku+Gothic+New:wght@300;400;500;700&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  /* Dark Neo-Noir Palette */
+  /* Pure black background base */
+  --background: 240 10% 3.9%;
+  --foreground: 0 0% 98%;
+
+  /* Muted, cold corporate blues/grays */
+  --card: 240 10% 3.9%;
+  --card-foreground: 0 0% 98%;
+  --popover: 240 10% 3.9%;
+  --popover-foreground: 0 0% 98%;
+
+  /* Primary Accent: Stark White or Cold Steel */
+  --primary: 0 0% 98%;
+  --primary-foreground: 240 5.9% 10%;
+
+  /* Secondary: Deep Charcoal */
+  --secondary: 240 3.7% 15.9%;
+  --secondary-foreground: 0 0% 98%;
+
+  /* Muted Text */
+  --muted: 240 3.7% 15.9%;
+  --muted-foreground: 240 5% 64.9%;
+
+  /* Crimson Accent (Blood/Warning) - subtle but powerful */
+  --accent: 0 84.2% 60.2%;
+  --accent-foreground: 0 0% 98%;
+
+  --destructive: 0 62.8% 30.6%;
+  --destructive-foreground: 0 0% 98%;
+
+  --border: 240 3.7% 15.9%;
+  --input: 240 3.7% 15.9%;
+  --ring: 240 4.9% 83.9%;
+
+  --radius: 0px; /* Sharp edges for corporate feel */
+
+  /* Typography Variables */
+  --font-display: 'Cormorant Garamond', serif; /* English Headlines */
+  --font-body: 'Inter', sans-serif; /* English Body */
+  --font-jp-serif: 'Noto Serif JP', serif; /* Japanese Headlines */
+  --font-jp-sans: 'Zen Kaku Gothic New', sans-serif; /* Japanese Body */
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+  body {
+    @apply bg-background text-foreground antialiased selection:bg-white selection:text-black;
+    font-family: var(--font-body);
+  }
+  
+  h1, h2, h3, h4, h5, h6 {
+    font-family: var(--font-display);
+    @apply tracking-tight;
+  }
+
+  .jp-serif {
+    font-family: var(--font-jp-serif);
+  }
+
+  .jp-sans {
+    font-family: var(--font-jp-sans);
+  }
+}
+
+@layer utilities {
+  .text-balance {
+    text-wrap: balance;
+  }
+  
+  .glass-panel {
+    @apply bg-black/40 backdrop-blur-md border border-white/10;
+  }
+
+  .perspective-1000 {
+    perspective: 1000px;
+  }
+
+  .preserve-3d {
+    transform-style: preserve-3d;
+  }
+}
+
+/* Custom Scrollbar for Chrome/Edge/Safari */
+::-webkit-scrollbar {
+  width: 6px;
+}
+::-webkit-scrollbar-track {
+  background: black; 
+}
+::-webkit-scrollbar-thumb {
+  background: #333; 
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #555; 
+}
+
+@keyframes equalizerA {
+  0%, 100% { transform: scaleY(1); }
+  50% { transform: scaleY(0.3); }
+}
+
+@keyframes equalizerB {
+  0%, 100% { transform: scaleY(0.6); }
+  50% { transform: scaleY(1); }
+}
