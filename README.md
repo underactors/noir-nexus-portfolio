@@ -1,4 +1,4 @@
-# 🕶️ Noir Nexus
+#Noir Nexus
 
 Modern full‑stack web application built with **Express, React,
 TypeScript, and PostgreSQL**.
